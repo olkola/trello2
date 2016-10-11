@@ -39,17 +39,16 @@ $(function() {
 		}
 	}
 
-	Column.prototype = {
+Column.prototype = {
 		addCard: function(card) {
-			this.$element.children('<ul>').append(card.$element);
-		}
-	};
-
-	Column.prototype = {	
+			if (card.description) {
+				this.$element.children('ul').append(card.$element);
+			}
+		},
 		removeColumn: function() {
 			this.$element.remove();
 		}
-	};
+};
 
 	function Card(description) {
 	var self = this;
